@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+package inference;
+
+service InferenceService{
+      //single prediction
+      rpc Predict (PredictRequest) returns (PredictResponse);
+
+      //batch prediction
+      rpc BatchPredict (BatchRequest) returns (BatchResponse);
+}
+
+message PredictRequest{
+      repeated float data = 1; //our resnet50 model expect a 4d tensor with float values so we send it as flat array and include the shape seperately
+      repeated int64 shape = 2;
+}
+
+message PredictResponse{
+      repeated float predictions = 1; //output probabilities
+      repeated int64 shape = 2;       // shape of the output
+      float latency_ms = 3;           //how long does the inference took
+}
+
+message BatchRequest{
+      repeated PredictRequest requests = 1; //batch of requests
+}
+
+message BatchResponse{
+      repeated PredictResponse response = 1; // batch of responses
+}

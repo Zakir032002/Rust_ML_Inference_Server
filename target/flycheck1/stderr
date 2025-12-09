@@ -1,0 +1,54 @@
+   0.302761458s  INFO prepare_target{force=false package_id=rustml_inference v0.1.0 (/Users/zakirhussain/Desktop/cool/rustml-inference) target="rustml_inference"}: cargo::core::compiler::fingerprint: fingerprint error for rustml_inference v0.1.0 (/Users/zakirhussain/Desktop/cool/rustml-inference)/Check { test: false }/TargetInner { name: "rustml_inference", doc: true, ..: with_path("/Users/zakirhussain/Desktop/cool/rustml-inference/src/main.rs", Edition2024) }
+   0.303481541s  INFO prepare_target{force=false package_id=rustml_inference v0.1.0 (/Users/zakirhussain/Desktop/cool/rustml-inference) target="rustml_inference"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/zakirhussain/Desktop/cool/rustml-inference/target/debug/.fingerprint/rustml_inference-3eaa4130585c4ca6/bin-rustml_inference`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+   0.353225000s  INFO prepare_target{force=false package_id=rustml_inference v0.1.0 (/Users/zakirhussain/Desktop/cool/rustml-inference) target="rustml_inference"}: cargo::core::compiler::fingerprint: fingerprint error for rustml_inference v0.1.0 (/Users/zakirhussain/Desktop/cool/rustml-inference)/Check { test: true }/TargetInner { name: "rustml_inference", doc: true, ..: with_path("/Users/zakirhussain/Desktop/cool/rustml-inference/src/main.rs", Edition2024) }
+   0.353239291s  INFO prepare_target{force=false package_id=rustml_inference v0.1.0 (/Users/zakirhussain/Desktop/cool/rustml-inference) target="rustml_inference"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/zakirhussain/Desktop/cool/rustml-inference/target/debug/.fingerprint/rustml_inference-6b6853fe9afd2943/test-bin-rustml_inference`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: std::backtrace::Backtrace::create
+   1: std::backtrace::Backtrace::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_ws
+   9: cargo::ops::cargo_compile::compile_with_exec
+  10: cargo::ops::cargo_compile::compile
+  11: cargo::commands::check::exec
+  12: <cargo::cli::Exec>::exec
+  13: cargo::main
+  14: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  15: std::rt::lang_start::<()>::{closure#0}
+  16: std::rt::lang_start_internal
+  17: _main
+    Checking rustml_inference v0.1.0 (/Users/zakirhussain/Desktop/cool/rustml-inference)
+error: could not compile `rustml_inference` (bin "rustml_inference") due to 5 previous errors; 4 warnings emitted
+warning: build failed, waiting for other jobs to finish...
+error: could not compile `rustml_inference` (bin "rustml_inference" test) due to 5 previous errors; 4 warnings emitted

@@ -1,0 +1,42 @@
+[package]
+name = "rustml_inference"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+# ONNX Runtime - loads and runs AI models
+ort = { version = "2.0.0-rc.10", features = ["download-binaries"] }
+ndarray = "0.17.1"  # Multi-dimensional arrays
+
+# gRPC Server (we'll use this on Day 3)
+tonic = "0.14.2"
+prost = "0.14.1"
+tokio = { version = "1.35", features = ["full"] }
+
+# Observability (we'll use this Week 2)
+prometheus = { version = "0.14.0", features = ["process"] }
+opentelemetry = "0.31.0"
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+
+# Utilities
+anyhow = "1.0"      # Easy error handling
+thiserror = "2.0.17"   # Custom error types
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+futures = "0.3.31"
+tonic-prost = "0.14.2"
+num_cpus = "1.17.0"
+axum = "0.8.7"
+metrics = "0.24.3"
+metrics-util = "0.20.1"
+metrics-exporter-prometheus = "0.18.1"
+
+[build-dependencies]
+tonic-prost-build = "0.14.2"
+
+
+[profile.release]
+debug = true      # Keep debug symbols for profiling
+lto = "thin"      # Link-time optimization
+codegen-units = 1 # Better optimization
