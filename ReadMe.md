@@ -154,4 +154,4 @@ Streaming RPC for audio/speech models
 This project demonstrates how modern machine learning inference servers are designed in practice.
 By incorporating batching, pooling, backpressure, and efficient model execution, it provides a strong foundation for deploying ONNX models at scale.
 
-The architecture is intentionally universal so that different models can be served with minimal changes, making it suitable for both research and real-world production environments.
+The architecture is intentionally universal so that different models can be served with minimal changes, making it suitable for both research and real-world production environments.# Rust_Projects
